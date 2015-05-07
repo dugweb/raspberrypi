@@ -9,9 +9,9 @@
 $command = "";
 if (isset($_POST['LightON']))
 {
-	$command = escapeshellcmd("python /var/www/raspberrypi/8-Relay-Module/relay_test.py");	
+	$command = escapeshellcmd("sudo python /var/www/raspberrypi/8-Relay-Module/relay_test.py");	
 } else if (isset($_POST['fastSwitch'])) {
-	$command = escapeshellcmd("python /var/www/raspberrypi/8-Relay-Module/fast_switch.py");
+	$command = escapeshellcmd("sudo python /var/www/raspberrypi/8-Relay-Module/fast_switch.py");
 }
 
 echo $command;
