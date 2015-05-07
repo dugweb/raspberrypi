@@ -14,7 +14,6 @@ if (isset($_POST['LightON']))
 	$command = escapeshellcmd("python /var/www/raspberrypi/8-Relay-Module/fast_switch.py");
 }
 
-$command = escapeshellcmd("sudo python /var/www/raspberrypi/8-Relay-Module/relay_test.py");
 echo $command;
 $exec = exec($command, $judist, $output);
 echo "$exec";
