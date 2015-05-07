@@ -6,21 +6,34 @@
 
 
 <?php
+$command = "";
 if (isset($_POST['LightON']))
 {
-var_dump($_POST['LightON']);
-// $exec = exec("ping -c 3 -s 64 -t 64 8.8.8.8", $judist, $output);
-$command = escapeshellcmd("python /var/www/raspberrypi/8-Relay-Module/relay_test.py");
+	$command = escapeshellcmd("python /var/www/raspberrypi/8-Relay-Module/relay_test.py");	
+} else if (isset($_POST['fastSwitch'])) {
+	$command = 
+}
+
+
 $exec = exec($command, $judist, $output);
-echo $exec;
+echo "$exec";
 echo '<br />------------<br />';
 print_r($output);
-}
+
+
 ?>
 
+
+<h2>Pi Commands</h2>
+
 <form method="post">
-<button class="btn" name="LightON" value="true">Test Relay</button>
+	<button class="btn" name="LightON" value="true">Test Relay</button>
 </form> 
+
+<form method="post">
+	<button class="btn" name="fastSwitch" value="true">Fast Switch</button>
+</form> 
+
 
 
 </html>
